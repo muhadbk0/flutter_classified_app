@@ -221,17 +221,9 @@ class _MainUIState extends State<MainUI> {
     _height = MediaQuery.of(context).size.height;
     _width = MediaQuery.of(context).size.width;
     return Scaffold(
-      bottomNavigationBar: _bottomNavBar(),
+    //  bottomNavigationBar: _bottomNavBar(),
       key: scaffoldKey,
       drawer: _drawer(),
-      floatingActionButton: FloatingActionButton.extended(
-        elevation: 3,
-        onPressed: () {},
-        backgroundColor: Colors.orange[200],
-        icon: Icon(Icons.camera_alt),
-        label: Text("Post AD", textAlign: TextAlign.center,style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: Container(
         height: _height,
         width: _width,
@@ -239,99 +231,30 @@ class _MainUIState extends State<MainUI> {
           child: Column(
             children: <Widget>[
               clipShape(),
-              Container(
-                margin: EdgeInsets.only(left: 30, right: 30, top: 20),
+              Divider(),
+              expandList(),
+              Center(
+                child:Container(
+                margin: EdgeInsets.only(left: 40, right: 40, top: 40),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text('Shop for',
-                        style: TextStyle(
-                             fontSize: 16)),
+//                    Text('Shop for',
+//                        style: TextStyle(
+//                             fontSize: 16)),
                     GestureDetector(
                         onTap: _expand,
                         child: Text(
                           isExpanded ? "Show less" : "Show all",
                           style: TextStyle(
-                              color: Colors.orange[200],
-                              ),
+                            color: Colors.orange[200],
+                          ),
                         )),
                     //IconButton(icon: isExpanded? Icon(Icons.arrow_drop_up, color: Colors.orange[200],) : Icon(Icons.arrow_drop_down, color: Colors.orange[200],), onPressed: _expand)
                   ],
                 ),
               ),
-              expandList(),
-              Divider(),
-              Container(
-                margin: EdgeInsets.only(left: 30, right: 30, top: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text("Trending",
-                        style: TextStyle(
-                            fontSize: 16)),
-                    GestureDetector(
-                        onTap: () {
-                         // Navigator.of(context).pushNamed(TRENDING_UI);
-                          print('Showing all');
-                        },
-                        child: Text(
-                          'Show all',
-                          style: TextStyle(
-                              color: Colors.orange[300],
-                             ),
-                        ))
-                  ],
-                ),
               ),
-              trendingProducts(),
-              Divider(),
-              Container(
-                margin: EdgeInsets.only(left: 30, right: 30, top: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text("Recommendations",
-                        style: TextStyle(
-                             fontSize: 16)),
-                    GestureDetector(
-                        onTap: () {
-                          //Navigator.of(context).pushNamed(RECOMMEND_UI);
-                          print('Showing all');
-                        },
-                        child: Text(
-                          'Show all',
-                          style: TextStyle(
-                              color: Colors.orange[300],
-                             ),
-                        ))
-                  ],
-                ),
-              ),
-              recommendations(),
-              Divider(),
-              Container(
-                margin: EdgeInsets.only(left: 30, right: 30, top: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text("Today's Deals",
-                        style: TextStyle(
-                             fontSize: 16)),
-                    GestureDetector(
-                        onTap: () {
-                          //Navigator.of(context).pushNamed(DEALS_UI);
-                          print('Showing all');
-                        },
-                        child: Text(
-                          'Show all',
-                          style: TextStyle(
-                              color: Colors.orange[300],
-                              ),
-                        ))
-                  ],
-                ),
-              ),
-              todaysDeals(),
             ],
           ),
         ),
@@ -356,15 +279,15 @@ class _MainUIState extends State<MainUI> {
               child: ListTile(
                 leading: CircleAvatar(
                   child: Icon(
-                    Icons.person,
+                    Icons.mail_outline,
                     size: 40,
                     color: Colors.black,
                   ),
                   radius: 30,
                   backgroundColor: Colors.white,
                 ),
-                title: Text("FlutterDevs"),
-                subtitle: Text("flutterDevs@aeologic.com",style: TextStyle(fontSize: 13),),
+                title: Text("Conatct Us"),
+                subtitle: Text("info@technewwings.com",style: TextStyle(fontSize: 13),),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
                   color: Colors.black,
@@ -373,43 +296,43 @@ class _MainUIState extends State<MainUI> {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.payment),
-            title: Text("Orders & Payments"),
+            leading: Icon(Icons.message),
+            title: Text("Connect via WhatsApp"),
           ),
         ],
       ),
     );
   }
 
-  Widget _bottomNavBar() {
-    return BottomAppBar(
-      notchMargin: 4,
-      shape: AutomaticNotchedShape(RoundedRectangleBorder(),RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
-      child:  Container(
-        margin: EdgeInsets.only(left: 50, right: 50),
-        decoration: BoxDecoration(
-
-            shape: BoxShape.rectangle,
-            borderRadius: BorderRadius.circular(30)
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            IconButton(
-              icon: Icon(Icons.home),
-              onPressed: () {},
-            ),
-
-            IconButton(
-              icon: Icon(Icons.message),
-              onPressed: () {},
-            )
-          ],
-        ),
-      ),
-    );
-  }
+//  Widget _bottomNavBar() {
+//    return BottomAppBar(
+//      notchMargin: 4,
+//      shape: AutomaticNotchedShape(RoundedRectangleBorder(),RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
+//      child:  Container(
+//        margin: EdgeInsets.only(left: 50, right: 50),
+//        decoration: BoxDecoration(
+//
+//            shape: BoxShape.rectangle,
+//            borderRadius: BorderRadius.circular(30)
+//        ),
+//        child: Row(
+//          mainAxisSize: MainAxisSize.max,
+//          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//          children: <Widget>[
+//            IconButton(
+//              icon: Icon(Icons.home),
+//              onPressed: () {},
+//            ),
+//
+//            IconButton(
+//              icon: Icon(Icons.message),
+//              onPressed: () {},
+//            )
+//          ],
+//        ),
+//      ),
+//    );
+//  }
 
   Widget clipShape() {
     return Stack(
@@ -523,7 +446,7 @@ class _MainUIState extends State<MainUI> {
                         ),
                         SizedBox(width: 10,),
                         Flexible(
-                            child: Text('Noida',
+                            child: Text('Kasaragod',
                                 style: TextStyle(
                                     color: Colors.white, fontSize: _height/50),
                                 // overflow: TextOverflow.fade,
@@ -1000,77 +923,45 @@ class _MainUIState extends State<MainUI> {
         dateAdded: "${listItem[index].dateAdded}",
         description: "${listItem[index].desc}",
         image: "${listItem[index].image}",
-        location: "Sector 62, Noida",
+        location: "Nayaks Road",
       ),
     );
   }
 
-  Widget recommendations() {
-    return Container(
-      height: _height / 4.25,
-      //width: MediaQuery.of(context).size.width,
-      child: ListView.builder(
-        padding: EdgeInsets.all(5),
-        shrinkWrap: true,
-        itemCount: recommendListItems.length,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (BuildContext context, index) {
-          return _buildRecommendationsEntries(
-              context, index, recommendListItems);
-        },
-      ),
-    );
-  }
+//  Widget recommendations() {
+//    return Container(
+//      height: _height / 4.25,
+//      //width: MediaQuery.of(context).size.width,
+//      child: ListView.builder(
+//        padding: EdgeInsets.all(5),
+//        shrinkWrap: true,
+//        itemCount: recommendListItems.length,
+//        scrollDirection: Axis.horizontal,
+//        itemBuilder: (BuildContext context, index) {
+//          return _buildRecommendationsEntries(
+//              context, index, recommendListItems);
+//        },
+//      ),
+//    );
+//  }
+//
+//  Widget _buildRecommendationsEntries(BuildContext context, int index, List<Product> listItem) {
+//    return GestureDetector(
+//      onTap: () {
+//        //Navigator.of(context).pushNamed(DETAIL_UI);
+//        print("Routing to detail page");
+//      },
+//      child: CustomCard(
+//        title: '${listItem[index].title}',
+//        category: '${listItem[index].category}',
+//        price: "₹${listItem[index].price}",
+//        dateAdded: "${listItem[index].dateAdded}",
+//        description: "${listItem[index].desc}",
+//        image: "${listItem[index].image}",
+//        location: "Sector 62, Kasaragod",
+//      ),
+//    );
+//  }
 
-  Widget _buildRecommendationsEntries(BuildContext context, int index, List<Product> listItem) {
-    return GestureDetector(
-      onTap: () {
-        //Navigator.of(context).pushNamed(DETAIL_UI);
-        print("Routing to detail page");
-      },
-      child: CustomCard(
-        title: '${listItem[index].title}',
-        category: '${listItem[index].category}',
-        price: "₹${listItem[index].price}",
-        dateAdded: "${listItem[index].dateAdded}",
-        description: "${listItem[index].desc}",
-        image: "${listItem[index].image}",
-        location: "Sector 62, Noida",
-      ),
-    );
-  }
 
-  Widget todaysDeals() {
-    return Container(
-      height: _height / 4.25,
-      //width: MediaQuery.of(context).size.width,
-      child: ListView.builder(
-        padding: EdgeInsets.all(5),
-        shrinkWrap: true,
-        itemCount: dealsListItems.length,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (BuildContext context, index) {
-          return _buildDealsEntries(context, index, dealsListItems);
-        },
-      ),
-    );
-  }
-
-  Widget _buildDealsEntries(BuildContext context, int index, List<Product> listItem) {
-    return GestureDetector(
-      onTap: () {
-        //Navigator.of(context).pushNamed(DETAIL_UI);
-        print("Routing to detail page");
-      },
-      child: CustomCard(
-        title: '${listItem[index].title}',
-        category: '${listItem[index].category}',
-        price: "₹${listItem[index].price}",
-        dateAdded: "${listItem[index].dateAdded}",
-        description: "${listItem[index].desc}",
-        image: "${listItem[index].image}",
-        location: "Sector 62, Noida",
-      ),
-    );
-  }
 }

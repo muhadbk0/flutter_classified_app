@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:http/http.dart' as http;
 import 'package:flutter_classifiedappclone/Constants/constants.dart';
 import 'package:flutter_classifiedappclone/UI/Widgets/splash_screen.dart';
 import 'package:flutter_classifiedappclone/UI/main_ui.dart';
@@ -30,3 +31,13 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+//Future<String> getData() async {
+//  var response = await http.get(
+//      Uri.encodeFull("https://jsonplaceholder.typicode.com/posts"),
+//      headers: {"Accept": "application/json"});
+//  setState(() {
+//    data = json.decode(response.body);
+//  });
+//  return "Success";
+
