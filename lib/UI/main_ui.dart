@@ -231,14 +231,14 @@ class _MainUIState extends State<MainUI> {
           child: Column(
             children: <Widget>[
               clipShape(),
-              Divider(),
+              //Divider(),
               expandList(),
               Center(
                 child:Container(
-                margin: EdgeInsets.only(left: 40, right: 40, top: 40),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
+               // margin: EdgeInsets.only(left: 40, right: 40, top: 40),
+             //   child: Row(
+              //    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  child:
 //                    Text('Shop for',
 //                        style: TextStyle(
 //                             fontSize: 16)),
@@ -251,8 +251,8 @@ class _MainUIState extends State<MainUI> {
                           ),
                         )),
                     //IconButton(icon: isExpanded? Icon(Icons.arrow_drop_up, color: Colors.orange[200],) : Icon(Icons.arrow_drop_down, color: Colors.orange[200],), onPressed: _expand)
-                  ],
-                ),
+
+              //  ),
               ),
               ),
             ],
